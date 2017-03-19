@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OKIL Project Nebula-na</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+	<link href='styles/bootstrap.min.css' rel='stylesheet' type='text/css'>
+	<link href='styles/dc.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div id="main-container">
+	<div id="main-view"></div>
+	<header>
+		<h1>Nebula-na</h1>
+	</header>
+	<div id="timeline"></div>
+	<div id="label">
+		Sentiment
+		<p><img src="image/pos-symbol.png" alt="positive" width="20px" height="20px"> <span> Positive</span></p>
+		<p><img src="image/neu-symbol.png" alt="neutral" width="20px" height="20px"> <span> Neutral</span></p>
+		<p><img src="image/neg-symbol.png" alt="negative" width="20px" height="20px"> <span> Negative</span></p>
+	</div>
+	<div id="detail">
+		<p id="detail-title">Title</p>
+		<p id="detail-date">Date</p>
+		<p id="detail-author">Author</p>
+		<p id="detail-comments">Comments</p>
+		<p id="detail-wordcloud">
+			<img id="wordcloud-img" src="image/temp.png" width="200px" height="200px" alt="wordcloud">
+		</p>
+	</div>
+</div>
+
+
+<div id='sub-container' style='font: 12px sans-serif;'>
+
+	<div class="dc-data-count" style="float: left;">
+		<h2>
+      <span>
+        <span class="filter-count"></span>
+         selected out of
+        <span class="total-count"></span>
+         records |
+        <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+      </span>
+		</h2>
+	</div>
+		<br>
+
+	<div class='row'>
+		<div class='span6' id='dc-score-chart'>
+			<h4>
+				Number of stories by score
+        <span>
+          <a class="reset"
+			 href="javascript:scoreChart.filterAll();dc.redrawAll();"
+			 style="display: none;">
+            reset
+          </a>
+        </span>
+			</h4>
+		</div>
+		<div class='span6' id='dc-descendants-chart'>
+			<h4>
+				Number of stories by conmments
+        <span>
+          <a class="reset"
+			 href="javascript:descendantsChart.filterAll();dc.redrawAll();"
+			 style="display: none;">
+            reset
+          </a>
+        </span>
+			</h4>
+		</div>
+	</div>
+	<br>
+	<div class='row'>
+		<div class='span12' id='dc-time-chart'>
+			<h4>
+				Stories per day
+        <span>
+          <a class="reset"
+			 href="javascript:timeChart.filterAll();dc.redrawAll();"
+			 style="display: none;">
+            reset
+          </a>
+        </span>
+			</h4>
+		</div>
+	</div>
+	<br>
+	<div class='row'>
+		<div class='span4' id='dc-dayweek-chart'>
+			<h4>
+				Day of the Week
+        <span>
+          <a class="reset"
+			 href="javascript:dayOfWeekChart.filterAll();dc.redrawAll();"
+			 style="display: none;">
+            reset
+          </a>
+        </span>
+			</h4>
+			<div class="clearfix"></div>
+		</div>
+		<div class='span4' id='dc-island-chart'>
+			<h4>
+				Positive or Negative Sentiment
+        <span>
+          <a class="reset"
+			 href="javascript:islandChart.filterAll();dc.redrawAll();"
+			 style="display: none;">
+            reset
+          </a>
+        </span>
+			</h4>
+		</div>
+	</div>
+	<br>
+	<div class='row'>
+		<div class='span12'>
+			<table class='table table-hover' id='dc-table-graph'>
+				<thead>
+				<tr class='header'>
+					<th>Story</th>
+					<th>Author</th>
+					<th>Commments</th>
+					<th>Score</th>
+					<th>Sentiment</th>
+				</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="lib/d3.js"></script>
+<script type="text/javascript" src="scripts/tooltip.js"></script>
+<script type="text/javascript" src="scripts/timeline.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
+
+<script src='lib/crossfilter.js' type='text/javascript'></script>
+<script src='lib/dc.js' type='text/javascript'></script>
+<script src='lib/jquery-1.9.1.min.js' type='text/javascript'></script>
+<script src='lib/bootstrap.min.js' type='text/javascript'></script>
+
+<script src='scripts/statsScript.js' type="text/javascript"></script>
+
+
+<!--<script src="scripts/bubble_chart.js"></script>-->
+</body>
+</html>
